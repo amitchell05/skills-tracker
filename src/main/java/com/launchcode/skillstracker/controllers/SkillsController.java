@@ -55,12 +55,27 @@ public class SkillsController {
 
     @PostMapping("form")
     public String skillsTrackerList(@RequestParam String name, @RequestParam String firstFav, @RequestParam String secondFav, @RequestParam String thirdFav) {
-        String html = "<h1>" + name + "</h1>" +
-                "<ol>" +
-                "<li>" + firstFav + "</li>" +
-                "<li>" + secondFav + "</li>" +
-                "<li>" + thirdFav + "</li>" +
-                "</ol>";
+        String html = "<h1>" + name + "'s Favorite Programming Languages</h1>" +
+                "<table style='border: 1px solid black; border-collapse: collapse'>" +
+                "<colgroup>" +
+                "<col>" +
+                "<col style='background-color: yellow'>" +
+                "</colgroup>" +
+                "<tr>" +
+                "<th style='border: 1px solid black; border-collapse: collapse'>Place</th>" +
+                "<th style='border: 1px solid black; border-collapse: collapse'>Programming Language</th>" +
+                "</tr>" +
+                "<tr>" +
+                "<td style='border: 1px solid black; border-collapse: collapse'>" + 1 + "</td>" +
+                "<td style='border: 1px solid black; border-collapse: collapse'>" + firstFav + "</td>" +
+                "</tr>" +
+                "<td style='border: 1px solid black; border-collapse: collapse'>" + 2 + "</td>" +
+                "<td style='border: 1px solid black; border-collapse: collapse'>" + secondFav + "</td>" +
+                "</tr>" +
+                "<td style='border: 1px solid black; border-collapse: collapse'>" + 3 + "</td>" +
+                "<td style='border: 1px solid black; border-collapse: collapse'>" + thirdFav + "</td>" +
+                "</tr>" +
+                "</table>";
         return html;
     }
 
