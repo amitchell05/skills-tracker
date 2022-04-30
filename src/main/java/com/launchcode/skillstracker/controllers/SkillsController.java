@@ -27,7 +27,7 @@ public class SkillsController {
 
     @GetMapping("form")
     public String skillsTrackerForm() {
-        String html = "<form method='post'>" +
+        String html = "<form action='results' method='post'>" +
                 "<label for='name'>Name:</label><br>" +
                 "<input type='text' name='name' /><br>" +
                 "<label for='firstFav'>My favorite language:</label><br>" +
@@ -53,14 +53,10 @@ public class SkillsController {
         return html;
     }
 
-    @PostMapping("form")
+    @PostMapping("results")
     public String skillsTrackerList(@RequestParam String name, @RequestParam String firstFav, @RequestParam String secondFav, @RequestParam String thirdFav) {
         String html = "<h1>" + name + "'s Favorite Programming Languages</h1>" +
                 "<table style='border: 1px solid black; border-collapse: collapse'>" +
-                "<colgroup>" +
-                "<col>" +
-                "<col style='background-color: yellow'>" +
-                "</colgroup>" +
                 "<tr>" +
                 "<th style='border: 1px solid black; border-collapse: collapse'>Place</th>" +
                 "<th style='border: 1px solid black; border-collapse: collapse'>Programming Language</th>" +
